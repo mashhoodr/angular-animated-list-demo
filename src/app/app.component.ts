@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-animated-list-demo';
+
+  counter = 5;
+  list = [1,2,3,4];
+  
+  add(){
+    this.list.push(this.counter++);
+  }
+  
+  remove(index) {
+    if(!this.list.length) return;
+    this.list.splice(index,1);
+  }
 }
